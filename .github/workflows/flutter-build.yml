@@ -1,4 +1,5 @@
 name: Build App
+
 on:
   push:
     branches:
@@ -15,7 +16,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.x"  # Change this to your Flutter version
+          flutter-version: "3.x"  # Change to your Flutter version
 
       - name: Install Dependencies
         run: flutter pub get
@@ -33,10 +34,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: build/app/outputs/flutter-apk/app-release.apk
-          tag_name: v0.0.${{ github.run_number }}
-          release_name: "Release v0.0.${{ github.run_number }}"
-          body: "🚀 APK Release"
+          tag_name: v1.0.${{ github.run_number }}
+          body: "🚀 New Flutter APK Release!"
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}  # Use Personal Access Token
