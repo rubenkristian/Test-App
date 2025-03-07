@@ -54,6 +54,7 @@ class Detail extends StatelessWidget {
               width: double.infinity,
               child: TextButton(
                 style: TextButton.styleFrom(backgroundColor: Colors.green),
+
                 onPressed: () {},
                 child: Text(
                   "Generate Bilangan Prima",
